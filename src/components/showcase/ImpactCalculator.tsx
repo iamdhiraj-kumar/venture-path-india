@@ -91,7 +91,7 @@ export function ImpactCalculator() {
               min={c.min}
               max={c.max}
               step={c.step}
-              onValueChange={([v]) => c.set(v)}
+              onValueChange={([v]) => c.set(v ?? c.value)}
               aria-label={c.label}
             />
           </div>

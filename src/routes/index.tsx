@@ -34,11 +34,11 @@ export const Route = createFileRoute("/")({
   component: DemoPage,
 });
 
-const DEFAULT_PROFILE = PERSONAS[0].profile;
+const DEFAULT_PROFILE = PERSONAS[0]!.profile;
 
 function DemoPage() {
   const { t, lang } = useLang();
-  const [personaId, setPersonaId] = useState<string | null>(PERSONAS[0].id);
+  const [personaId, setPersonaId] = useState<string | null>(PERSONAS[0]!.id);
   const [profile, setProfile] = useState<Profile>(DEFAULT_PROFILE);
   const [submitted, setSubmitted] = useState<Profile>(DEFAULT_PROFILE);
   const [showAll, setShowAll] = useState(false);
@@ -134,7 +134,7 @@ function DemoPage() {
                 setPersonaId(null);
               }}
               onSubmit={() => setSubmitted(profile)}
-              onReset={() => pickPersona(PERSONAS[0])}
+              onReset={() => pickPersona(PERSONAS[0]!)}
             />
           </div>
 

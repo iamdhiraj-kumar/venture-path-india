@@ -63,8 +63,8 @@ const STAGES = [
 
 export function ArchitectureDiagram() {
   const { lang } = useLang();
-  const [active, setActive] = useState(STAGES[2].id);
-  const stage = STAGES.find((s) => s.id === active) ?? STAGES[0];
+  const [active, setActive] = useState(STAGES[2]!.id);
+  const stage = STAGES.find((s) => s.id === active) ?? STAGES[0]!;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.15fr_1fr]">
