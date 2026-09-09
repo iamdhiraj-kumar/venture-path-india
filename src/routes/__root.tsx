@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { LanguageProvider } from "../lib/i18n";
+import { SahayakProvider } from "../components/SahayakChat";
+
 
 function NotFoundComponent() {
   return (
@@ -77,15 +80,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Sahayak — AI Scheme Matching | SIH26092" },
+      {
+        name: "description",
+        content:
+          "AI-driven government scheme matching for marginalized Indian entrepreneurs. Smart India Hackathon 2026, problem statement SIH26092.",
+      },
+      { name: "author", content: "Team Sahayak · SIH 2026" },
+      { property: "og:title", content: "Sahayak — AI Scheme Matching | SIH26092" },
+      {
+        property: "og:description",
+        content:
+          "Match entrepreneurs to PMEGP, Mudra, PM SVANidhi, Stand-Up India and more, with scores, subsidies and roadmaps.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
+
     links: [
       {
         rel: "stylesheet",
@@ -119,8 +130,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <LanguageProvider>
+        <SahayakProvider>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </SahayakProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
+
