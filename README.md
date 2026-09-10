@@ -93,7 +93,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:8080
+Open https://venture-path-india.lovable.app/
 
 Other commands:
 
@@ -106,13 +106,7 @@ npm run lint      # lint
 ---
 
 ## 5. Put it on GitHub — step by step
-
-### Option A · Automatic sync from Lovable (easiest)
-1. In the Lovable editor, open the **+** menu (bottom-left of the chat) → **GitHub** → **Connect project**.
-2. Authorize the Lovable GitHub App and pick your GitHub account or organization.
-3. Click **Create Repository**. Your code is pushed immediately, and every future change syncs both ways.
-
-### Option B · Manual push
+Manual push
 1. Download the code: Lovable editor → **Code editor** → **Download codebase** (or download the ZIP from the synced repo).
 2. On GitHub click **New repository**, name it e.g. `sahayak-sih26092`, keep it public, do **not** add a README (this file is one).
 3. In a terminal, from the unzipped project folder:
